@@ -1,0 +1,77 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Расклады — Astro Soul</title><style>
+body { margin:0 }
+#astro-iris {
+  --plum:#170d19; --cream:#faf2e8; --lilac:#d7b5e8; --ink:#281324;
+  --gutter:clamp(20px,4.4vw,76px);
+  background:var(--cream); color:var(--ink);
+  font:400 16px/1.45 Arial,sans-serif;
+}
+#astro-iris * { box-sizing:border-box }
+#astro-iris a { color:inherit; text-decoration:none }
+#astro-iris a:focus-visible { outline:3px solid #aa73ce; outline-offset:3px }
+#astro-iris :is(h1,h2,h3) { margin:0; font-family:Georgia,'Times New Roman',serif; font-weight:400; line-height:1.02 }
+#astro-iris .hero { background:var(--plum); color:var(--cream) }
+#astro-iris .wrap { max-width:1680px; margin:auto; padding-inline:var(--gutter) }
+#astro-iris .bar { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:78px; border-bottom:1px solid #756474 }
+#astro-iris .brand { display:inline-flex; align-items:center; gap:12px; font:italic clamp(26px,2.5vw,40px) Georgia,serif; white-space:nowrap }
+#astro-iris .brand img { width:62px; mix-blend-mode:lighten }
+#astro-iris nav { display:flex; flex-wrap:wrap; gap:8px clamp(15px,2.3vw,40px) }
+#astro-iris nav a { padding:7px 0 }
+#astro-iris nav a:hover { text-decoration:underline; text-underline-offset:5px }
+#astro-iris .stage { max-width:1680px; margin:auto; position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:center; min-height:clamp(450px,34vw,600px); padding:48px var(--gutter) }
+#astro-iris .scene { position:absolute; inset:0 0 0 auto; width:56%; z-index:-1; background:url('iris.webp') center/cover no-repeat; mask-image:linear-gradient(90deg,transparent,#000 19%) }
+#astro-iris h1 { font-size:clamp(64px,7.1vw,118px); letter-spacing:-.052em }
+#astro-iris h1 em { display:block; color:var(--lilac); font-weight:400 }
+#astro-iris .subtitle { font-size:clamp(19px,1.75vw,28px); margin:20px 0 30px }
+#astro-iris .cta { display:inline-flex; align-items:center; gap:18px; padding:16px 24px; background:var(--lilac); color:var(--ink); border-radius:2px }
+#astro-iris .cta:hover { background:#e6cef0 }
+#astro-iris .services { padding-block:32px 40px }
+#astro-iris h2 { font-size:clamp(38px,3.8vw,66px); margin-bottom:24px }
+#astro-iris .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px }
+#astro-iris .card { position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:flex-start; flex-direction:column; justify-content:space-between; gap:22px; padding:clamp(18px,2vw,32px); min-height:clamp(190px,17vw,290px); background:#f0e4d8 }
+#astro-iris .card.tarot { background:#e2d0e3 }
+#astro-iris .card img { position:absolute; right:0; top:0; height:100%; width:59%; object-fit:cover; z-index:-1; mask-image:linear-gradient(90deg,transparent,#000 22%) }
+#astro-iris h3 { font-size:clamp(28px,3vw,48px) }
+#astro-iris .arrow { display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; width:40px; height:40px }
+#astro-iris .card:hover .arrow { background:var(--ink); color:white }
+@media(max-width:760px){
+ #astro-iris .bar { flex-wrap:wrap; gap:2px; padding-block:10px }
+ #astro-iris nav { font-size:14px; gap:0 16px }
+ #astro-iris .brand img { width:42px }
+ #astro-iris .stage { display:block; min-height:0; padding-top:30px; padding-bottom:clamp(230px,64vw,375px) }
+ #astro-iris .scene { inset:auto 0 0; width:100%; height:clamp(240px,69vw,400px); background-position:50% 60%; mask-image:linear-gradient(180deg,transparent,#000 22%) }
+ #astro-iris h1 { font-size:clamp(48px,10vw,74px) }
+ #astro-iris .subtitle { margin:15px 0 20px }
+ #astro-iris .grid { grid-template-columns:1fr; gap:14px }
+}
+
+#astro-iris .inside{background:linear-gradient(90deg,#190e1cef 20%,#190e1c99 65%,transparent),url('iris.webp') right 42%/cover; padding:clamp(44px,7vw,110px) var(--gutter)}
+#astro-iris .inside h1{font-size:clamp(50px,7vw,100px)}
+#astro-iris .content{padding-block:clamp(30px,4vw,66px);min-height:45vh}
+#astro-iris .content section+section{margin-top:60px}
+#astro-iris .content h2{font-size:clamp(30px,3.3vw,52px)}
+#astro-iris .content h3{font-size:clamp(24px,2vw,35px)}
+#astro-iris .content p{line-height:1.65;margin:14px 0 24px}
+#astro-iris .items,#astro-iris .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px}
+#astro-iris .item,#astro-iris .contact{background:#fffaf4;border:1px solid #ded0d5}
+#astro-iris .item>div,#astro-iris .contact{padding:25px}
+#astro-iris .item img{width:100%;height:185px;object-fit:cover}
+#astro-iris .action{display:inline-block;padding:11px 17px;background:#44233f;color:white;margin-block:6px}
+#astro-iris .certs a{display:grid;place-items:center;padding:10px;background:white}
+#astro-iris .certs img{width:100%;height:270px;object-fit:contain}
+#astro-iris .bio{display:flex;align-items:center;gap:clamp(20px,4vw,70px);flex-wrap:wrap}
+#astro-iris .bio img{width:min(100%,320px);border-radius:140px 140px 4px 4px}
+#astro-iris .prose{max-width:760px;margin:36px auto}
+#astro-iris nav [aria-current]{text-decoration:underline;text-underline-offset:5px}
+</style></head><body><div id="astro-iris"><header class="hero">
+    <div class="wrap"><div class="bar">
+      <a class="brand" href="index.html"><img src="mark.webp" alt="">Astro Soul</a>
+      <nav aria-label="Основное меню">
+        <a href="about.html">Обо мне</a>
+        <a href="astrology.html">Астрология</a>
+        <a aria-current="page" href="rasklady.html">Расклады</a>
+        <a href="diplomas.html">Дипломы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div></div>
+    <div class="inside"><h1>Расклады</h1></div></header><main class="wrap content"><section><h2>Расклады на будущее</h2><p>Прогноз на год или выбранный период</p><div class="items"><article class="item"><img src="item-2-34.webp" loading="lazy" alt=""><div><h3>12 месяцев</h3><p>Значение расклада:<br>1. Главные энергии и события c января по декабрь<br>Год рассчитывается с момента обращения или с календарного.<br>Срок выполнения - до 5-х дней<br>Видеоозапись</p><a class="action" href="contacts.html">Заказать 4.900₽ →</a></div></article></div></section><section><h2>Любовные Расклады</h2><p>Сомнения, подозрения на измену, проблемы в отношениях, подходящий ли кандидат..</p><div class="items"><article class="item"><img src="item-2-35.webp" loading="lazy" alt=""><div><h3>Выйду ли я замуж?</h3><p>Значение расклада:<br>1. Какой вы представляете себя?<br>2. Как вы выглядите в глазах мужчин?<br>3. Ваши представления о будущем супруге<br>4. Место или обстоятельство, при которых произойдет встреча<br>5. Что нужно сделать, чтобы ускорить встречу?<br>6. Есть ли кармические причины, не дающие вступить в брак?<br>7. Вероятность выйти замуж в загаданный период<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article><article class="item"><img src="item-2-36.webp" loading="lazy" alt=""><div><h3>Выбор из 2-х избранников</h3><p>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 4,900₽ →</a></div></article><article class="item"><img src="item-2-37.webp" loading="lazy" alt=""><div><h3>Измена</h3><p>Значение расклада:<br>1. Ваше отношение к партнеру, на данный момент<br>2. Отношение вашего партнера к вам на данный момент<br>3. Причины, которые привели к подозрениям<br>5. Есть ли реальный повод к подозрениям<br>5. Была ли измена на самом деле<br>6. Как необходимо поступить вопрошающему<br>7. Общие перспективы отношений<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article><article class="item"><img src="item-2-38.webp" loading="lazy" alt=""><div><h3>Всё о нём</h3><p>Значение расклада:<br>1. Мысли человека о вас, то, как он вас воспринимает<br>2. Его чувства к вам<br>3. Объяснение поведения человека по отношению к вам<br>4. Восприятие вашей связи, к чему стремится<br>5. Его переживания и страхи, то, что его может не устраивать в отношениях с вами<br>6. Планы партнера, что он готов сделать, чтобы продолжить отношения<br>7. Тенденции развития отношений на ближайшие 3 месяца<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article><article class="item"><img src="item-2-39.webp" loading="lazy" alt=""><div><h3>Почему не получается завести отношения</h3><p>Значение расклада:<br>1. Какой вас видят мужчины<br>2. Что в вас отталкивает мужчин<br>3. Что в вас нравится мужчинам<br>4. Каких мужчин вы притягиваете<br>5. Какого мужчину стоит искать<br>6. Тенденции развития в личной жизни на загаданный период<br>7. Что поможет создать счастливый союз<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article></div></section><section><h2>Расклады на работу</h2><p>Думаете сменить работы, принимать ли заманчивое предложение, ваша самореализация..</p><div class="items"><article class="item"><img src="item-2-40.webp" loading="lazy" alt=""><div><h3>Ваша работа</h3><p>Значение расклада:<br>1. Ваше отношение к работе<br>2. Преимущества которые даёт вам эта работа<br>3. Чем она вас не устраивает, чего не хватает<br>4. Что делать, чтобы улучшить ситуацию на работе<br>5. Какие действия могут привезти к ухудшению<br>6. Перспективы на работе в течении полугода<br>7. Совет от карт<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,700₽ →</a></div></article><article class="item"><img src="item-2-41.webp" loading="lazy" alt=""><div><h3>HR - расклад<br>Подбор кадров/Деловое сотрудничество</h3><p>Значение расклада:<br>1. Каким образом сотрудничество повлияет на ваши дела?<br>3. Как сложатся ваши отношения с потенциальным партнером в загаданный период?<br>4. Каким человеком является потенциальный партнер по характеру?<br>5. Чего он ожидает от сотрудничества?<br>6. Каким потенциалом он обладает в плане финансов и профессиональных способностей?<br>7. Как сложится ваше сотрудничество на загаданный период?<br>8. Совет от карт<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 5,000₽ →</a></div></article><article class="item"><img src="item-2-42.webp" loading="lazy" alt=""><div><h3>Поиск призвания</h3><p>Значение расклада:<br>1. Моя страсть, чем я увлечен, что мне действительно нравится (3 карты)<br>2. На что я способен, в каких сферах деятельности я силён, мои сильные стороны (3 карты)<br>3. Лучше ли для меня реализовать себя в команде или себя в собственном бизнесе?<br>4. Совет от карт<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article></div></section><section><h2>Другие Расклады</h2><p>Финансы, принятие решения, переезд, судебные дела, желание и тд</p><div class="items"><article class="item"><img src="item-2-43.webp" loading="lazy" alt=""><div><h3>Моё желание</h3><p>Значение расклада:<br>1. Исполнится ли ваше желание?<br>● Если НЕТ, то почему?<br>● Если ДА, то как это будет<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,000₽ →</a></div></article><article class="item"><img src="item-2-44.webp" loading="lazy" alt=""><div><h3>Выбор</h3><p>Значение расклада:<br>1. Ваше отношение к выбору и предстоящему решению<br>2. Последовательность развития событий, в том случае если вы будете действовать в 1 варианте<br>3. Последовательность развития событий, в том случае если вы будете действовать в 2 варианте<br>4. Итог выбора и совет от карт<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 3,500₽ →</a></div></article><article class="item"><img src="item-2-45.webp" loading="lazy" alt=""><div><h3>Расклад на финансы &quot;Тайные Сокровища&quot;</h3><p>Значение расклада:<br>1. Ваше отношение к деньгам<br>2. Ваш потенциал в финансовой сфере<br>3. Изменения финансов, которые принесёт новый год<br>4. Позитивные или негативные внешние влияния<br>5. Траты и потери в течении года<br>6. Возможный источник финансовых проблем<br>7. Расходы, которые можно сократить, чтобы улучшить ваше положение<br>8. Способ увеличить ваш потенциал в сфере заработка<br>9. Финансовые итоги года.<br>10. Совет от карт, как себя правильно вести с деньгами, чтобы их преумножить<br>Срок выполнения - до 3-х дней<br>Видеозапись</p><a class="action" href="contacts.html">Заказать 5,000₽ →</a></div></article></div></section></main></div></body></html>

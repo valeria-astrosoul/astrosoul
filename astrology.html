@@ -1,0 +1,77 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Астрология — Astro Soul</title><style>
+body { margin:0 }
+#astro-iris {
+  --plum:#170d19; --cream:#faf2e8; --lilac:#d7b5e8; --ink:#281324;
+  --gutter:clamp(20px,4.4vw,76px);
+  background:var(--cream); color:var(--ink);
+  font:400 16px/1.45 Arial,sans-serif;
+}
+#astro-iris * { box-sizing:border-box }
+#astro-iris a { color:inherit; text-decoration:none }
+#astro-iris a:focus-visible { outline:3px solid #aa73ce; outline-offset:3px }
+#astro-iris :is(h1,h2,h3) { margin:0; font-family:Georgia,'Times New Roman',serif; font-weight:400; line-height:1.02 }
+#astro-iris .hero { background:var(--plum); color:var(--cream) }
+#astro-iris .wrap { max-width:1680px; margin:auto; padding-inline:var(--gutter) }
+#astro-iris .bar { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:78px; border-bottom:1px solid #756474 }
+#astro-iris .brand { display:inline-flex; align-items:center; gap:12px; font:italic clamp(26px,2.5vw,40px) Georgia,serif; white-space:nowrap }
+#astro-iris .brand img { width:62px; mix-blend-mode:lighten }
+#astro-iris nav { display:flex; flex-wrap:wrap; gap:8px clamp(15px,2.3vw,40px) }
+#astro-iris nav a { padding:7px 0 }
+#astro-iris nav a:hover { text-decoration:underline; text-underline-offset:5px }
+#astro-iris .stage { max-width:1680px; margin:auto; position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:center; min-height:clamp(450px,34vw,600px); padding:48px var(--gutter) }
+#astro-iris .scene { position:absolute; inset:0 0 0 auto; width:56%; z-index:-1; background:url('iris.webp') center/cover no-repeat; mask-image:linear-gradient(90deg,transparent,#000 19%) }
+#astro-iris h1 { font-size:clamp(64px,7.1vw,118px); letter-spacing:-.052em }
+#astro-iris h1 em { display:block; color:var(--lilac); font-weight:400 }
+#astro-iris .subtitle { font-size:clamp(19px,1.75vw,28px); margin:20px 0 30px }
+#astro-iris .cta { display:inline-flex; align-items:center; gap:18px; padding:16px 24px; background:var(--lilac); color:var(--ink); border-radius:2px }
+#astro-iris .cta:hover { background:#e6cef0 }
+#astro-iris .services { padding-block:32px 40px }
+#astro-iris h2 { font-size:clamp(38px,3.8vw,66px); margin-bottom:24px }
+#astro-iris .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px }
+#astro-iris .card { position:relative; isolation:isolate; overflow:hidden; display:flex; align-items:flex-start; flex-direction:column; justify-content:space-between; gap:22px; padding:clamp(18px,2vw,32px); min-height:clamp(190px,17vw,290px); background:#f0e4d8 }
+#astro-iris .card.tarot { background:#e2d0e3 }
+#astro-iris .card img { position:absolute; right:0; top:0; height:100%; width:59%; object-fit:cover; z-index:-1; mask-image:linear-gradient(90deg,transparent,#000 22%) }
+#astro-iris h3 { font-size:clamp(28px,3vw,48px) }
+#astro-iris .arrow { display:grid; place-items:center; border:1px solid currentColor; border-radius:50%; width:40px; height:40px }
+#astro-iris .card:hover .arrow { background:var(--ink); color:white }
+@media(max-width:760px){
+ #astro-iris .bar { flex-wrap:wrap; gap:2px; padding-block:10px }
+ #astro-iris nav { font-size:14px; gap:0 16px }
+ #astro-iris .brand img { width:42px }
+ #astro-iris .stage { display:block; min-height:0; padding-top:30px; padding-bottom:clamp(230px,64vw,375px) }
+ #astro-iris .scene { inset:auto 0 0; width:100%; height:clamp(240px,69vw,400px); background-position:50% 60%; mask-image:linear-gradient(180deg,transparent,#000 22%) }
+ #astro-iris h1 { font-size:clamp(48px,10vw,74px) }
+ #astro-iris .subtitle { margin:15px 0 20px }
+ #astro-iris .grid { grid-template-columns:1fr; gap:14px }
+}
+
+#astro-iris .inside{background:linear-gradient(90deg,#190e1cef 20%,#190e1c99 65%,transparent),url('iris.webp') right 42%/cover; padding:clamp(44px,7vw,110px) var(--gutter)}
+#astro-iris .inside h1{font-size:clamp(50px,7vw,100px)}
+#astro-iris .content{padding-block:clamp(30px,4vw,66px);min-height:45vh}
+#astro-iris .content section+section{margin-top:60px}
+#astro-iris .content h2{font-size:clamp(30px,3.3vw,52px)}
+#astro-iris .content h3{font-size:clamp(24px,2vw,35px)}
+#astro-iris .content p{line-height:1.65;margin:14px 0 24px}
+#astro-iris .items,#astro-iris .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px}
+#astro-iris .item,#astro-iris .contact{background:#fffaf4;border:1px solid #ded0d5}
+#astro-iris .item>div,#astro-iris .contact{padding:25px}
+#astro-iris .item img{width:100%;height:185px;object-fit:cover}
+#astro-iris .action{display:inline-block;padding:11px 17px;background:#44233f;color:white;margin-block:6px}
+#astro-iris .certs a{display:grid;place-items:center;padding:10px;background:white}
+#astro-iris .certs img{width:100%;height:270px;object-fit:contain}
+#astro-iris .bio{display:flex;align-items:center;gap:clamp(20px,4vw,70px);flex-wrap:wrap}
+#astro-iris .bio img{width:min(100%,320px);border-radius:140px 140px 4px 4px}
+#astro-iris .prose{max-width:760px;margin:36px auto}
+#astro-iris nav [aria-current]{text-decoration:underline;text-underline-offset:5px}
+</style></head><body><div id="astro-iris"><header class="hero">
+    <div class="wrap"><div class="bar">
+      <a class="brand" href="index.html"><img src="mark.webp" alt="">Astro Soul</a>
+      <nav aria-label="Основное меню">
+        <a href="about.html">Обо мне</a>
+        <a aria-current="page" href="astrology.html">Астрология</a>
+        <a href="rasklady.html">Расклады</a>
+        <a href="diplomas.html">Дипломы</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+    </div></div>
+    <div class="inside"><h1>Астрология</h1></div></header><main class="wrap content"><section><h2>Астро услуги</h2><p>Что вы можете узнать</p><div class="items"><article class="item"><img src="item-1-21.webp" loading="lazy" alt=""><div><h3>Натальная карта</h3><p>Ваш космический паспорт и личная астрологическая инструкция<br>Вы получите описание Вашего восходящего знака, личностные характеристики, сильные и слабые стороны, интересы, эмоции и чувства, ваши амбиции и целеустремленность.<br>Этот разбор поможет вам лучше понимать себя и своё внутреннее я, причины возникновения конфликтов, возможных причин болезней. Поговорим о нашем предназначении и о том, в чем ждет удача именно вас<br>Вы получите текстовый файл в формате PDF<br>Онлайн - консультация 90 минут или видео-запись<br>Срок выполнения от 7 дней</p><a class="action" href="contacts.html">Заказать 9.900₽ →</a></div></article><article class="item"><img src="item-1-22.webp" loading="lazy" alt=""><div><h3>Мужчина моей мечты</h3><p>Вы получите ответы на вопросы, кто ваш идеальный партнёр, где и как вы можете с ним познакомиться, какими качествами он должен обладать, чтобы вы были счастливы в отношениях.<br>Вы получите текстовый файл в формате PDF<br>Видео-запись консультации<br>Срок выполнения от 7 дней</p><a class="action" href="contacts.html">Заказать 5,500₽ →</a></div></article><article class="item"><img src="item-1-23.webp" loading="lazy" alt=""><div><h3>Профориентация</h3><p>Где вы можете проявить себя ярче всего и получить от этого максимальный заработок и удовольствие<br>Просто задайте себе вопросы:<br>Вы знаете, что вы любите делать, что даёт вам ощущение счастья?Вы можете это делать? Или существуют некие препятствия?То, что вы любите и можете, ваши умения и навыки - они востребованы?То, что вы делаете приносит вам желаемый доход и жизнь в достатке? ДЕНЬГИ И КАРЬЕРА. Вы получите рекомендации по заработку, ваша идеальная профессия, способ заработка, отношение к деньгам, что нужно делать чтобы они приумножались.<br>Вы получите текстовый файл в формате PDF<br>Видео-запись разбора<br>Срок выполнения от 7 дней</p><a class="action" href="contacts.html">Заказать 8,000₽ →</a></div></article><article class="item"><img src="item-1-24.webp" loading="lazy" alt=""><div><h3>Детский гороскоп</h3><p>Способности и характер<br>В чём могут быть трудности<br>В какой кружок лучше отдать<br>Какие направления в спорте подойдут<br>Какие опасности его могут ждать<br>Вы получите текстовый файл в формате PDF<br>Онлайн - консультация 90 минут<br>Срок выполнения от 7 дней</p><a class="action" href="contacts.html">Заказать 6,500₽ →</a></div></article><article class="item"><img src="item-1-25.webp" loading="lazy" alt=""><div><h3>Прогноз на год</h3><p>Какие важные события ожидают лично вас в следующем году или в любой выбранный год<br>Вы получите текстовый файл в формате PDF<br>90 минут<br>Срок выполнения от 14 дней</p><a class="action" href="contacts.html">Заказать 12,000₽ →</a></div></article><article class="item"><img src="item-1-26.webp" loading="lazy" alt=""><div><h3>Когда? Заглянем в будущее</h3><p>Когда я выйду замуж?<br>Когда у меня появится ребенок?<br>Когда я сменю работу?<br>Когда перееду заграницу?<br>Когда у меня будет своя недвижимость?<br>Свой вопрос<br>Заглянем в ближайшее будущее и поищем ответ на 1 интересующий вопрос<br>Онлайн-консультация 90 минут или видео-запись<br>Вы получите текстовый файл в формате PDF<br>90 минут<br>Срок выполнения от 14 дней</p><a class="action" href="contacts.html">Заказать 6,500₽ →</a></div></article><article class="item"><img src="item-1-27.webp" loading="lazy" alt=""><div><h3>Тематический анализ</h3><p>Анализ 1 темы на выбор<br>1) Показатели богатства в моем гороскопе<br>2) Показатели жизни заграницей<br>3) Многодетность или бездетность, возможные риски беременности<br>Вы получите текстовый файл в формате PDF<br>Онлайн-консультация 90 минут или видео-запись<br>Срок выполнения от 7 дней<br>90 минут</p><a class="action" href="contacts.html">Заказать 4,900₽ →</a></div></article><article class="item"><img src="item-1-28.webp" loading="lazy" alt=""><div><h3>Синастрия</h3><p>Подробное описание совместимости вас и Вашего партнера/ребёнка, коллеги.<br>Возможен ли счастливый брак с партнером<br>Слабые и сильные стороны этих отношений, укрепление взаимопонимания, избегание конфликтов и как сгладить углы.<br>Если вам нравится парень/девушка и вы не знаете, как понравиться или вы хотите наладить отношения со своими половинками, благодаря консультации вы узнаете:<br>внешность и образ идеального партнеракак правильно подавать себякакими качествами нужно обладатьчтобы пробудить в нем интерес, его темперамент и предпочтениячего он ждёт от отношенийна каком женится/выйти замуж.<br>Вы получите текстовый файл в формате PDF<br>Видео-запись консультации или онлайн-консультацию 90 минут<br>Срок выполнения от 7 дней</p><a class="action" href="contacts.html">Заказать 9,500₽ →</a></div></article><article class="item"><img src="item-1-29.webp" loading="lazy" alt=""><div><h3>Формула Души</h3><p>Из чего состоит ваша душа? Что ей хочется, когда она счастлива и свободна? В какую стороны двигаться?<br>Вы получите текстовый файл в формате PDF<br>Онлайн-консультация 90 минут или видео-запись<br>Срок выполнения от 7 дней<br>90 минут</p><a class="action" href="contacts.html">Заказать 5,500₽ →</a></div></article><article class="item"><img src="item-1-30.webp" loading="lazy" alt=""><div><h3>Подбор благоприятного времени для значимового события</h3><p>Когда заключить брак<br>Какую дату праздника выбрать<br>Когда запустить важный проект, открыть бизнес<br>Приобретение дорогостоящей покупки<br>Дата зачатия ребёнка<br>Вы получите текстовый файл в формате PDF<br>Персональный список дат<br>Срок выполнения от 7 дней<br>1 событие</p><a class="action" href="contacts.html">Заказать 5,500₽ →</a></div></article><article class="item"><img src="item-1-31.webp" loading="lazy" alt=""><div><h3>Проверь своего избранника</h3><p>Есть ли у него в гороскопе 1 из нижеуказанных тем:<br>1) Наркомания/Алкоголизм<br>2) Агрессия и деспотизм<br>3) Игромания<br>4) Сексуальные отклонения<br>5) Психические заболевания<br>6) Богатство или бедность<br>7) Лживость<br>Вы получите текстовый файл в формате PDF<br>Онлайн-консультация 90 минут или видео-запись<br>Срок выполнения от 7 дней<br>90 мин</p><a class="action" href="contacts.html">Заказать 5.500₽ →</a></div></article><article class="item"><img src="item-1-32.webp" loading="lazy" alt=""><div><h3>Показатели заложенного потенциала Бизнесмена/леди</h3><p>В какой сфере бизнес будет успешен<br>Вы получите текстовый файл в формате PDF<br>Онлайн-консультация 90 минут или видео-запись<br>Срок выполнения от 7 дней<br>90 мин</p><a class="action" href="contacts.html">Заказать 6,500₽ →</a></div></article><article class="item"><img src="item-1-33.webp" loading="lazy" alt=""><div><h3>Подбор кадров</h3><p>Анализ натальных карт потенциальных кандидатов на должность</p><a class="action" href="contacts.html">Заказать По договоренности →</a></div></article></div></section><section><h2>Как это происходит</h2><p></p><div class="items"><article class="item"><div><h3>Что необходимо</h3><p>Предоставить точные данные рождения: дата, время, место<br>Чем точнее данные, тем точнее будет результат анализа, интересующей темы</p></div></article><article class="item"><div><h3>Сроки</h3><p>Срок зависит от объема заказа, минимальный срок от 7 дней</p></div></article><article class="item"><div><h3>Что я получу</h3><p>Живая консультация в Skype.<br>PDF Презентация с полным описанием<br>Скидка 10% при заказе 2-х астрологических услуг.</p></div></article></div></section></main></div></body></html>
